@@ -1,4 +1,3 @@
-import 'package:epictetus/components/app_bar.dart';
 import 'package:epictetus/main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -11,41 +10,56 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black,
-        body: SafeArea(
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: <Color>[
-                  Color(0xff374151),
-                  Color(0xff313b4b),
-                  Color(0xff2c3545),
-                  Color(0xff262f3e),
-                  Color(0xff212938),
-                  Color(0xff1b2333),
-                  Color(0xff161d2d),
-                  Color(0xff111827),
-                ],
-                tileMode: TileMode.mirror,
+        appBar: AppBar(
+          backgroundColor: const Color(0xff374151),
+          centerTitle: true,
+          leading: IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.menu),
+          ),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(4.0),
+                child: Container(
+                  color: const Color(0xff4b5563),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12.0,
+                    vertical: 6.0,
+                  ),
+                  child: const Text(
+                    'E',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Source Sans 3',
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
               ),
-            ),
-            height: double.infinity,
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Flexible(
-                  child: CustomAppBar(),
+              const SizedBox(width: 12.0),
+              const Text(
+                'Epictetus',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
                 ),
-                Flexible(
-                  flex: 9,
-                  fit: FlexFit.tight,
-                  child: MainScreen(),
-                ),
-              ],
-            ),
+              )
+            ],
+          ),
+        ),
+        backgroundColor: const Color(0xff374151),
+        body: const SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: MainScreen(),
+              ),
+            ],
           ),
         ),
       ),

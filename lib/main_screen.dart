@@ -21,6 +21,10 @@ class MainScreen extends StatelessWidget {
             ),
           ),
           child: Card(
+            margin: const EdgeInsets.symmetric(
+              horizontal: 30.0,
+              vertical: 16.0,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [

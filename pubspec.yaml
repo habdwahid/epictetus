@@ -78,6 +78,10 @@ flutter:
     - family: 'Patrick Hand'
       fonts:
         - asset: fonts/PatrickHand-Regular.ttf
+    - family: 'Source Sans 3'
+      fonts:
+        - asset: fonts/SourceSans3-Semibold.ttf
+          weight: 600
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
