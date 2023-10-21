@@ -10,3 +10,25 @@ Designed by [Nauval](https://figma.com/@mhd) at [Code The Design](https://codede
 
 [Flutter-logo]: https://img.shields.io/badge/Flutter-000?style=for-the-badge&logo=flutter&logoColor=%2302569B
 [Flutter-url]: https://flutter.dev
+
+## Get Started
+
+1. Clone this repo
+
+```sh
+git clone https://github.com/habdwahid/epictetus.git
+```
+
+2. Build the app
+
+- Android (Debug)
+
+```sh
+flutter build apk --debug
+```
+
+- iOS (Debug)
+
+```sh
+flutter build ios --debug
+```
