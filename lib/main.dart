@@ -18,8 +18,6 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _selectedIndex = index;
     });
-
-    Navigator.pop(context);
   }
 
   static final List<Widget> _widgetOptions = <Widget>[
@@ -96,65 +94,72 @@ class _MyAppState extends State<MyApp> {
         ),
         drawer: Drawer(
           backgroundColor: const Color(0xff374151),
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              ListTile(
-                leading: const Icon(Icons.home),
-                onTap: () {
-                  _onItemTapped(0);
-                },
-                selected: _selectedIndex == 0,
-                title: const Text(
-                  'Home',
-                  style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+          child: SafeArea(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                ListTile(
+                  leading: const Icon(Icons.home),
+                  onTap: () {
+                    _onItemTapped(0);
+                    Navigator.pop(context);
+                  },
+                  selected: _selectedIndex == 0,
+                  title: const Text(
+                    'Home',
+                    style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+                  ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.design_services),
-                onTap: () {
-                  _onItemTapped(1);
-                },
-                selected: _selectedIndex == 1,
-                title: const Text(
-                  'UI Design',
-                  style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+                ListTile(
+                  leading: const Icon(Icons.design_services),
+                  onTap: () {
+                    _onItemTapped(1);
+                    Navigator.pop(context);
+                  },
+                  selected: _selectedIndex == 1,
+                  title: const Text(
+                    'UI Design',
+                    style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+                  ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.view_comfortable),
-                onTap: () {
-                  _onItemTapped(2);
-                },
-                selected: _selectedIndex == 2,
-                title: const Text(
-                  'Front-End',
-                  style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+                ListTile(
+                  leading: const Icon(Icons.view_comfortable),
+                  onTap: () {
+                    _onItemTapped(2);
+                    Navigator.pop(context);
+                  },
+                  selected: _selectedIndex == 2,
+                  title: const Text(
+                    'Front-End',
+                    style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+                  ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.data_object),
-                onTap: () {
-                  _onItemTapped(3);
-                },
-                selected: _selectedIndex == 3,
-                title: const Text(
-                  'Back-End',
-                  style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+                ListTile(
+                  leading: const Icon(Icons.data_object),
+                  onTap: () {
+                    _onItemTapped(3);
+                    Navigator.pop(context);
+                  },
+                  selected: _selectedIndex == 3,
+                  title: const Text(
+                    'Back-End',
+                    style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+                  ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.other_houses),
-                onTap: () {
-                  _onItemTapped(4);
-                },
-                selected: _selectedIndex == 4,
-                title: const Text(
-                  'Lainnya',
-                  style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+                ListTile(
+                  leading: const Icon(Icons.other_houses),
+                  onTap: () {
+                    _onItemTapped(4);
+                    Navigator.pop(context);
+                  },
+                  selected: _selectedIndex == 4,
+                  title: const Text(
+                    'Lainnya',
+                    style: TextStyle(color: Color.fromRGBO(255, 255, 255, 0.6)),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
